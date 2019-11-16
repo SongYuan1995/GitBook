@@ -1,0 +1,349 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>DDL · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="GitBook使用教程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="GitBook使用教程.html">
+            
+                <a href="GitBook使用教程.html">
+            
+                    
+                    GitBook
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3" data-path="DDL.html">
+            
+                <a href="DDL.html">
+            
+                    
+                    DDL
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >DDL</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="ddl">DDl</h2>
+<h5 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;">&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;</h5>
+<pre><code class="lang-mysql">create database if not exists db_hive;
+create database if not exists db_hive location &apos;db_hive.db&apos;;
+</code></pre>
+<h5 id="&#x4FEE;&#x6539;&#x6570;&#x636E;&#x5E93;">&#x4FEE;&#x6539;&#x6570;&#x636E;&#x5E93;</h5>
+<p>&#x6570;&#x636E;&#x5E93;&#x7684;&#x5176;&#x4ED6;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x90FD;&#x662F;&#x4E0D;&#x53EF;&#x66F4;&#x6539;&#x7684;&#xFF0C;&#x5305;&#x62EC;&#x6570;&#x636E;&#x5E93;&#x540D;&#x548C;&#x6570;&#x636E;&#x5E93;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x4F4D;&#x7F6E;&#x3002;</p>
+<pre><code class="lang-mysql">alter database db_hive set dbproperties(&apos;createtime&apos;=&apos;20170830&apos;);
+</code></pre>
+<p>&#x5728;mysql&#x4E2D;&#x67E5;&#x770B;&#x4FEE;&#x6539;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-mysql"> desc database extended db_hive;
+</code></pre>
+<h5 id="&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x8BE6;&#x60C5;">&#x67E5;&#x770B;&#x6570;&#x636E;&#x5E93;&#x8BE6;&#x60C5;</h5>
+<pre><code class="lang-mysql">desc database db_hive;
+</code></pre>
+<h5 id="&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;">&#x5220;&#x9664;&#x6570;&#x636E;&#x5E93;</h5>
+<pre><code class="lang-mysql"> drop database db_hive; #&#x6570;&#x636E;&#x5E93;&#x4E3A;&#x7A7A;
+ drop database db_hive cascade; #&#x6570;&#x636E;&#x5E93;&#x4E0D;&#x4E3A;&#x7A7A;
+</code></pre>
+<h5 id="&#x521B;&#x5EFA;&#x8868;">&#x521B;&#x5EFA;&#x8868;</h5>
+<pre><code class="lang-mysql">CREATE [EXTERNAL] TABLE [IF NOT EXISTS] table_name  
+[(col_name data_type [COMMENT col_comment], ...)]  
+[COMMENT table_comment]  
+[PARTITIONED BY (col_name data_type [COMMENT col_comment], ...)]  
+[CLUSTERED BY (col_name, col_name, ...)  
+[SORTED BY (col_name [ASC|DESC], ...)] INTO num_buckets BUCKETS]  
+[ROW FORMAT row_format]  
+[STORED AS file_format]  
+[LOCATION hdfs_path]
+#ROW FORMAT  
+#DELIMITED [FIELDS TERMINATED BY char] 
+#[COLLECTION ITEMS TERMINATED BY char]  
+#[MAP KEYS TERMINATED BY char] 
+#[LINES TERMINATED BY char]  
+#SERDE serde_name [WITH SERDEPROPERTIES (property_name=property_value, 
+#property_name=property_value, ...)] 
+
+#SERDE:&#x5E8F;&#x5217;&#x5316;&#x4E0E;&#x53CD;&#x5E8F;&#x5217;&#x5316;
+#STORED AS &#x6307;&#x5B9A;&#x5B58;&#x50A8;&#x6587;&#x4EF6;&#x7C7B;&#x578B; &#xFF1A;
+#SEQUENCEFILE&#xFF08;&#x4E8C;&#x8FDB;&#x5236;&#x5E8F;&#x5217;&#x6587;&#x4EF6;&#xFF09;&#x3001;TEXTFILE&#xFF08;&#x6587;&#x672C;&#xFF09;&#x3001;RCFILE&#xFF08;&#x5217;&#x5F0F;&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x6587;&#x4EF6;&#xFF09;
+</code></pre>
+<h5 id="&#x7BA1;&#x7406;&#x8868;&#x4E0E;&#x5916;&#x90E8;&#x8868;&#x7684;&#x4E92;&#x76F8;&#x8F6C;&#x6362;">&#x7BA1;&#x7406;&#x8868;&#x4E0E;&#x5916;&#x90E8;&#x8868;&#x7684;&#x4E92;&#x76F8;&#x8F6C;&#x6362;</h5>
+<p><code>alter table stu set tblproperties(&apos;EXTERNAL=FALSE&apos;);</code></p>
+<h5 id="&#x7BA1;&#x7406;&#x8868;&#xFF1A;">&#x7BA1;&#x7406;&#x8868;&#xFF1A;</h5>
+<p>&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x5185;&#x90E8;&#x8868;&#xFF0C; &#x5F53;&#x6211;&#x4EEC;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x7BA1;&#x7406;&#x8868;&#x65F6;&#xFF0C;Hive &#x4E5F;&#x4F1A;&#x5220;&#x9664;&#x8FD9;&#x4E2A;&#x8868;&#x4E2D;&#x6570;&#x636E;&#x3002;&#x7BA1;&#x7406;&#x8868;&#x4E0D;&#x9002;&#x5408;&#x548C;&#x5176;&#x4ED6;&#x5DE5;&#x5177;&#x5171;&#x4EAB;&#x6570;&#x636E;&#x3002;</p>
+<h4 id="&#x5206;&#x533A;&#x8868;&#xFF1A;">&#x5206;&#x533A;&#x8868;&#xFF1A;</h4>
+<p>&#x5BF9;&#x5E94;&#x4E00;&#x4E2A; HDFS &#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E0A;&#x7684;&#x72EC;&#x7ACB;&#x7684;&#x6587;&#x4EF6;&#x5939;&#xFF0C;&#x8BE5;&#x6587;&#x4EF6;&#x5939;&#x4E0B;&#x662F;&#x8BE5;&#x5206;&#x533A;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x3002;&#x56E0;&#x4E3A;&#x8868;&#x662F;&#x5916;&#x90E8;&#x8868;&#xFF0C;&#x6240;&#x4EE5; Hive &#x5E76;&#x975E;&#x8BA4;&#x4E3A;&#x5176;&#x5B8C;&#x5168;&#x62E5;&#x6709;&#x8FD9;&#x4EFD;&#x6570;&#x636E;&#x3002;&#x5220;&#x9664;&#x8BE5;&#x8868;&#x5E76;&#x4E0D;&#x4F1A;&#x5220;&#x9664;&#x6389;&#x8FD9;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x4E0D;&#x8FC7;&#x63CF;&#x8FF0;&#x8868;&#x7684;&#x5143;&#x6570;&#x636E;&#x4FE1;&#x606F;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x6389;&#x3002;</p>
+<h5 id="&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5230;&#x5206;&#x533A;&#x8868;">&#x52A0;&#x8F7D;&#x6570;&#x636E;&#x5230;&#x5206;&#x533A;&#x8868;</h5>
+<pre><code class="lang-mysql">load data local inpath &apos;/opt/module/datas/dept.txt&apos; into table default.dept_partition       partition(month=&apos;201709&apos;);
+</code></pre>
+<h5 id="&#x589E;&#x52A0;&#x5206;&#x533A;&#x591A;&#x4E2A;&#x5206;&#x533A;&#x4E4B;&#x95F4;&#x7528;&#x7A7A;&#x683C;&#x95F4;&#x9694;">&#x589E;&#x52A0;&#x5206;&#x533A;(&#x591A;&#x4E2A;&#x5206;&#x533A;&#x4E4B;&#x95F4;&#x7528;&#x7A7A;&#x683C;&#x95F4;&#x9694;)</h5>
+<pre><code class="lang-mysql">alter table dept_partition add partition(month=&apos;201705&apos;) partition(month=&apos;201704&apos;);
+</code></pre>
+<h5 id="&#x5220;&#x9664;&#x5206;&#x533A;&#xFF08;&#x591A;&#x4E2A;&#x5206;&#x533A;&#x4E4B;&#x95F4;&#x7528;&#x9017;&#x53F7;&#x95F4;&#x9694;&#xFF09;">&#x5220;&#x9664;&#x5206;&#x533A;&#xFF08;&#x591A;&#x4E2A;&#x5206;&#x533A;&#x4E4B;&#x95F4;&#x7528;&#x9017;&#x53F7;&#x95F4;&#x9694;&#xFF09;</h5>
+<pre><code class="lang-mysql">alter table dept_partition drop partition (month=&apos;201705&apos;),partition (month=&apos;201706&apos;);
+</code></pre>
+<h5 id="&#x628A;&#x6570;&#x636E;&#x76F4;&#x63A5;&#x4E0A;&#x4F20;&#x5230;&#x5206;&#x533A;&#x76EE;&#x5F55;&#x4E0A;&#xFF0C;&#x8BA9;&#x5206;&#x533A;&#x8868;&#x548C;&#x6570;&#x636E;&#x4EA7;&#x751F;&#x5173;&#x8054;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;">&#x628A;&#x6570;&#x636E;&#x76F4;&#x63A5;&#x4E0A;&#x4F20;&#x5230;&#x5206;&#x533A;&#x76EE;&#x5F55;&#x4E0A;&#xFF0C;&#x8BA9;&#x5206;&#x533A;&#x8868;&#x548C;&#x6570;&#x636E;&#x4EA7;&#x751F;&#x5173;&#x8054;&#x7684;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</h5>
+<h6 id="&#xFF08;1&#xFF09;&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x540E;&#x4FEE;&#x590D;">&#xFF08;1&#xFF09;&#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x540E;&#x4FEE;&#x590D;</h6>
+<pre><code class="lang-mysql">#&#x4E0A;&#x4F20;&#x6570;&#x636E;
+hive (default)&gt; dfs -mkdir -p /user/hive/warehouse/dept_partition2/month=201709/day=12; 
+hive (default)&gt; dfs -put /opt/module/datas/dept.txt  /user/hive/warehouse/dept_partition2/month=201709/day=12; 
+#&#x6B64;&#x65F6;&#x67E5;&#x8BE2;&#x65E0;&#x6570;&#x636E;&#xFF0C;&#x9700;&#x6267;&#x884C;&#x4FEE;&#x590D;&#x547D;&#x4EE4;
+hive&gt; msck repair table dept_partition2;
+</code></pre>
+<h6 id="&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x540E;&#x6DFB;&#x52A0;&#x5206;&#x533A;">&#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x540E;&#x6DFB;&#x52A0;&#x5206;&#x533A;</h6>
+<pre><code class="lang-mysql">#&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x540C;&#x4E0A;
+#&#x6267;&#x884C;&#x6DFB;&#x52A0;&#x5206;&#x533A; 
+hive (default)&gt; alter table dept_partition2 add partition(month=&apos;201709&apos;, day=&apos;12&apos;);
+</code></pre>
+<h6 id="&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x540E;-load-&#x6570;&#x636E;&#x5230;&#x5206;&#x533A;">&#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x4E0A;&#x4F20;&#x6570;&#x636E;&#x540E; load &#x6570;&#x636E;&#x5230;&#x5206;&#x533A;</h6>
+<pre><code class="lang-mysql"># &#x521B;&#x5EFA;&#x76EE;&#x5F55; 
+hive (default)&gt; dfs -mkdir -p /user/hive/warehouse/dept_partition2/month=201709/day=10; 
+# &#x4E0A;&#x4F20;&#x6570;&#x636E; 
+hive (default)&gt; load data local inpath &apos;/opt/module/datas/dept.txt&apos; into table 
+dept_partition2 partition(month=&apos;201709&apos;,day=&apos;10&apos;);
+</code></pre>
+<h4 id="&#x4FEE;&#x6539;&#x8868;">&#x4FEE;&#x6539;&#x8868;</h4>
+<h5 id="&#x91CD;&#x547D;&#x540D;">&#x91CD;&#x547D;&#x540D;</h5>
+<pre><code class="lang-mysql"># &#x8BED;&#x6CD5;
+ALTER TABLE table_name RENAME TO new_table_name 
+# &#x4F8B;&#x5B50;
+alter table dept_partition2 rename to dept_partition3;
+</code></pre>
+<h5 id="&#x589E;&#x52A0;&#x4FEE;&#x6539;&#x66FF;&#x6362;&#x5217;&#x4FE1;&#x606F;">&#x589E;&#x52A0;/&#x4FEE;&#x6539;/&#x66FF;&#x6362;&#x5217;&#x4FE1;&#x606F;</h5>
+<pre><code class="lang-mysql"># &#x66F4;&#x65B0;&#x5217;
+ALTER TABLE table_name CHANGE [COLUMN] col_old_name col_new_name column_type 
+[COMMENT col_comment] [FIRST|AFTER column_name] 
+#&#x4F8B;&#x5B50;
+ alter table dept_partition change column deptdesc desc int; 
+
+ #&#x589E;&#x52A0;&#x548C;&#x66FF;&#x6362;&#x5217; 
+ ALTER TABLE table_name ADD|REPLACE COLUMNS (
+     col_name data_type [COMMENT col_comment], ...) 
+ # &#x4F8B;&#x5B50;
+ alter table dept_partition replace columns(
+     deptno string, dname string, loc string);
+</code></pre>
+<h6 id=""> </h6>
+<h5 id="&#x67E5;&#x8BE2;&#x8868;&#x7684;&#x7C7B;&#x578B;">&#x67E5;&#x8BE2;&#x8868;&#x7684;&#x7C7B;&#x578B;</h5>
+<p><code>desc formatted stu;</code></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="GitBook使用教程.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: GitBook">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DDL","level":"1.3","depth":1,"previous":{"title":"GitBook","level":"1.2","depth":1,"path":"GitBook使用教程.md","ref":"GitBook使用教程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"DDL.md","mtime":"2019-11-11T06:22:26.549Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-16T03:14:12.431Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
